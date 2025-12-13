@@ -20,7 +20,7 @@
 Berikut adalah anggota **Kelompok 3** yang berkontribusi dalam penelitian ini:
 
 | No | Nama Anggota | NIM |
-|:--:|:---|:---:|:---|
+|:--:|:---|:---:|
 | 1 | **Fabio Banyu Cyto** | `123450104` |
 | 2 | **Gusti Putu Ferazka D.** | `123450046` |
 | 3 | **Aliya Amara Ananta** | `123450075` |
