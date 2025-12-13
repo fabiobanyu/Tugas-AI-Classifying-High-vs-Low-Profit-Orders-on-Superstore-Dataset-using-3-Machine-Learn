@@ -1,102 +1,116 @@
-# Tugas Pemodelan: Klasifikasi dan Evaluasi Prediksi – Dataset Superstore  
-**Mata Kuliah:** Artificial Intelligence  
-
-Kelompok 3 Artificial Interlligence:
-1. Fabio Banyu Cyto (123450104)
-2. Gusti Putu Ferazka D. (123450046)
-3. Aliya Amara Ananta (123450075)
-4. Hafsa Fazila Arradhi	(123450079)
----
-
 <div align="center">
 
-### 📘 *“Machine Learning Classification for Profit Prediction using Superstore Dataset”*  
-Mengimplementasikan model klasifikasi untuk memprediksi apakah suatu transaksi menghasilkan **profit** atau **loss**, melalui proses end-to-end mulai dari preprocessing, modeling, hingga evaluasi.
+# 📘 Machine Learning: Superstore Profit Prediction
+**Tugas Besar — Pemodelan & Evaluasi Prediksi** *Mata Kuliah: Artificial Intelligence | Kelompok 3*
+
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-FL-red?style=for-the-badge&logo=xgboost&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+
+<p align="center">
+  <b>Mengimplementasikan model klasifikasi end-to-end untuk memprediksi profitabilitas transaksi retail.</b>
+</p>
 
 </div>
 
 ---
 
-## 📌 Deskripsi Tugas
-Repository ini berisi proses lengkap dalam melakukan **pemodelan klasifikasi** pada **Dataset Superstore**, dimulai dari penentuan tujuan penelitian, penetapan variabel target, pembersihan data, eksplorasi data, pemilihan model, hingga evaluasi performa. Tugas ini dikembangkan melalui diskusi terstruktur bersama rekan kelompok untuk menentukan variabel target yang paling tepat, model yang paling sesuai, serta landasan ilmiah dari pemilihan tersebut.
+## 👨‍💻 Tim Penyusun
+Berikut adalah anggota **Kelompok 3** yang berkontribusi dalam penelitian ini:
+
+| No | Nama Anggota | NIM | Peran / Fokus |
+|:--:|:---|:---:|:---|
+| 1 | **Fabio Banyu Cyto** | `123450104` | *Data Preprocessing & Modeling* |
+| 2 | **Gusti Putu Ferazka D.** | `123450046` | *Exploratory Data Analysis (EDA)* |
+| 3 | **Aliya Amara Ananta** | `123450075` | *Feature Engineering & Evaluation* |
+| 4 | **Hafsa Fazila Arradhi** | `123450079` | *Documentation & Reporting* |
 
 ---
 
-## 🎯 Tujuan Penelitian  
-Tujuan utama dari penelitian ini adalah:
+## 📌 Deskripsi Proyek
+Repository ini mendokumentasikan proses **pemodelan klasifikasi** menggunakan **Dataset Superstore**. Proyek ini mencakup alur kerja *Data Science* yang komprehensif:
 
-### **“Membangun model klasifikasi untuk memprediksi apakah suatu penjualan menghasilkan profit atau tidak.”**
+1.  **Problem Framing**: Menentukan tujuan bisnis dan variabel target.
+2.  **Data Preparation**: Pembersihan data, penanganan outlier, dan feature engineering.
+3.  **Modeling**: Implementasi algoritma Machine Learning.
+4.  **Evaluation**: Analisis performa model menggunakan berbagai metrik.
 
-Variabel target yang digunakan adalah:
-
-### **`ProfitStatus`**
-- **1 = Profit / Menguntungkan**  
-- **0 = Loss / Merugi**
-
-**Alasan pemilihan target ini:**  
-- Penentuan sangat **sederhana dan langsung**, hanya membandingkan nilai profit.
-- Relevan secara bisnis dan **dapat diterapkan untuk rekomendasi operasional**.
-- Tidak menimbulkan bias seperti region atau kategori produk.
-- Cocok untuk **model-model klasifikasi dasar hingga menengah**.
+> **Highlight:** Tugas ini dikembangkan melalui diskusi terstruktur untuk memastikan pemilihan model dan metode evaluasi memiliki landasan ilmiah yang kuat.
 
 ---
 
-## 📂 Dataset Superstore  
-Dataset Superstore merupakan data penjualan retail populer yang terdiri dari informasi transaksi seperti:
+## 🎯 Tujuan Penelitian
+Fokus utama dari penelitian ini adalah:
 
-- **Order Date**  
-- **Ship Mode**  
-- **Customer Segment**  
-- **Category & Sub-Category**  
-- **Sales**  
-- **Discount**  
-- **Quantity**  
-- **Profit**  
-- **Region**  
-- **City**  
-- **State**
+### *"Membangun model klasifikasi untuk memprediksi apakah suatu transaksi penjualan akan menghasilkan PROFIT atau LOSS."*
 
-Dataset ini digunakan untuk:  
-- Mengklasifikasikan apakah transaksi menghasilkan profit atau loss  
-- Mengidentifikasi pola transaksi yang menyebabkan kerugian  
-- Memberikan insight bisnis yang dapat membantu strategi penjualan
+### 🏷️ Variabel Target: `ProfitStatus`
+Kami mentransformasi variabel numerik `Profit` menjadi variabel kategorikal biner:
+
+| Label | Kelas | Deskripsi |
+|:---:|:---:|:---|
+| **1** | **Profit** | Transaksi Menguntungkan 📈 |
+| **0** | **Loss** | Transaksi Merugi 📉 |
+
+**Mengapa Target Ini Dipilih?**
+* ✅ **Simple & Direct**: Representasi langsung dari kesehatan finansial transaksi.
+* ✅ **Actionable**: Hasil prediksi dapat digunakan untuk mencegah transaksi yang berpotensi rugi.
+* ✅ **Unbiased**: Menghindari bias demografis (seperti Region atau Customer Segment).
 
 ---
 
-## 🧹 Tahap Pembersihan dan Persiapan Data  
-Tahapan preprocessing yang dilakukan mencakup:
+## 📂 Tentang Dataset
+Dataset ini memuat informasi detail transaksi ritel. Fitur-fitur utama meliputi:
 
-- Mengonversi nilai profit menjadi kategori **profit/loss (`ProfitStatus`)**
-- Encoding variabel kategori (LabelEncoder/OneHot)
-- Menghapus data duplikat  
-- Menangani outlier jika diperlukan  
-- Normalisasi fitur numerik (MinMaxScaler / StandardScaler)
+<details>
+<summary><b>Klik untuk melihat detail fitur</b></summary>
 
-Proses ini penting agar model dapat belajar dengan lebih efektif dan menghasilkan prediksi yang stabil.
+* **Waktu & Pengiriman**: `Order Date`, `Ship Mode`
+* **Pelanggan**: `Customer Segment`
+* **Produk**: `Category`, `Sub-Category`
+* **Metrik Keuangan**: `Sales`, `Quantity`, `Discount`, `Profit`
+* **Lokasi**: `Region`, `City`, `State`
 
----
-
-## 📊 Pemodelan Klasifikasi  
-Model yang digunakan pada penelitian ini dipilih karena:
-
-- **Mudah digunakan**
-- Cocok untuk dataset tabular**
-- Performa baik pada data klasifikasi**
-- Mudah dipahami hasil dan karakteristiknya
-
-### **Model yang digunakan:**
-
-#### 1. 🌲 **XGBoost**  
-#### 2. 🌳 **Random Forest Classifier**  
-#### 3. ➗ **Logistic Regression**  
+</details>
 
 ---
 
-## 🧪 Evaluasi Model  
-Untuk mengukur performa ketiga model, digunakan metrik evaluasi berikut:
+## ⚙️ Metodologi & Preprocessing
+Agar model dapat bekerja optimal, kami melakukan tahapan berikut:
 
-- 🎯 **Accuracy** — tingkat keseluruhan prediksi yang benar  
-- 🎯 **Precision** — akurasi model dalam memprediksi kelas profit  
-- 🎯 **Recall** — kemampuan model menemukan semua instance profit  
-- 🎯 **F1-Score** — keharmonisan antara precision dan recall  
-- 🎯 **Confusion Matrix** — visualisasi prediksi benar/salah per kelas  
+1.  **Target Engineering**: Konversi `Profit` $\rightarrow$ `ProfitStatus` (0/1).
+2.  **Cleaning**: Penghapusan duplikat dan penanganan *missing values*.
+3.  **Encoding**: Mengubah data kategori (teks) menjadi angka menggunakan *LabelEncoder* atau *OneHotEncoder*.
+4.  **Scaling**: Normalisasi fitur numerik menggunakan *MinMaxScaler/StandardScaler*.
+
+---
+
+## 🧠 Model Klasifikasi
+Kami membandingkan tiga algoritma populer untuk menentukan performa terbaik:
+
+### 1. 🌲 XGBoost (Extreme Gradient Boosting)
+> Dipilih karena performanya yang sangat tinggi dalam menangani data tabular dan kemampuannya menangani pola kompleks.
+
+### 2. 🌳 Random Forest Classifier
+> Model *ensemble* yang kuat terhadap *overfitting* dan memberikan wawasan mengenai *Feature Importance*.
+
+### 3. ➗ Logistic Regression
+> Digunakan sebagai *baseline model* karena kesederhanaannya dan kemudahan interpretasi (Explainability).
+
+---
+
+## 🧪 Metrik Evaluasi
+Performa model diukur menggunakan parameter berikut:
+
+* 🎯 **Accuracy**: Seberapa sering model memprediksi dengan benar secara keseluruhan.
+* ⚖️ **Precision**: Seberapa akurat model saat memprediksi kelas "Profit".
+* 🔍 **Recall**: Seberapa baik model menemukan seluruh data yang benar-benar "Profit".
+* 🎼 **F1-Score**: Rata-rata harmonis antara Precision dan Recall (penting jika data tidak seimbang).
+* 🔲 **Confusion Matrix**: Peta detail kesalahan prediksi (False Positive vs False Negative).
+
+---
+
+<div align="center">
+  <small>Copyright © 2024 Kelompok 3 Artificial Intelligence. All Rights Reserved.</small>
+</div>
