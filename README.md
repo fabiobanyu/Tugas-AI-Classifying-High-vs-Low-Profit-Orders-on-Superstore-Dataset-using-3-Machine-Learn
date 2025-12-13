@@ -1,7 +1,11 @@
 # Tugas Pemodelan: Klasifikasi dan Evaluasi Prediksi – Dataset Superstore  
 **Mata Kuliah:** Artificial Intelligence  
-**Nama:** Fabio Banyu Cyto (123450104)
 
+Kelompok 3 Artificial Interlligence:
+1. Fabio Banyu Cyto (123450104)
+2. Gusti Putu Ferazka D. (123450046)
+3. Aliya Amara Ananta (123450075)
+4. Hafsa Fazila Arradhi	(123450079)
 ---
 
 <div align="center">
